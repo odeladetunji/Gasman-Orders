@@ -6,4 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface OrdersRepository extends CrudRepository<Orders, Long> {
+    @Override
+    void deleteById(Long aLong);
 }
