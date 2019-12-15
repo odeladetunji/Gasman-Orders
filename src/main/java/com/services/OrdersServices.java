@@ -8,6 +8,8 @@ import com.models.Payment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.sql.Blob;
+
 @Service
 public class OrdersServices implements OrdersServicesInterface{
 
@@ -63,6 +65,8 @@ public class OrdersServices implements OrdersServicesInterface{
             return message;
         }
     }
+
+   // Blob blob = new javax.sql.rowset.serial.SerialBlob();
 
     @Override
     public StringBuilder makePayment(Payment payload){

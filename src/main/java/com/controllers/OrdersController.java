@@ -7,7 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
-public class OrdersController {
+public class OrdersController{
 
     @Autowired
     OrdersServicesInterface ordersServicesInterface;
@@ -22,20 +22,23 @@ public class OrdersController {
 
     @ResponseBody
     @PostMapping(path = "/Gasman/placeOrder")
-    public StringBuilder placeOrder(Orders payload){
-        return ordersServicesInterface.placeOrder(payload);
+    public String placeOrder(@RequestBody  Orders payload){
+        StringBuilder result = ordersServicesInterface.placeOrder(payload);
+        return result.toString();
     }
 
     @ResponseBody
     @GetMapping(path = "/Gasman/cancellOrder")
-    public StringBuilder cancellOrder(@RequestAttribute("Id") Long id){
-        return ordersServicesInterface.cancellOrder(id);
+    public String cancellOrder(@RequestAttribute("Id") Long id){
+        StringBuilder result = ordersServicesInterface.cancellOrder(id);
+        return result.toString();
     }
 
     @ResponseBody
     @PostMapping(path = "/Gasman/makePayment")
-    public StringBuilder makePayment(Payment payload){
-        return ordersServicesInterface.makePayment(payload);
+    public String makePayment(@RequestBody Payment payload){
+        StringBuilder result = ordersServicesInterface.makePayment(payload);
+        return result.toString();
     }
 
 }

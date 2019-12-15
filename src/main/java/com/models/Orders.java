@@ -1,7 +1,9 @@
 package com.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.Data;
 
+@Data
 public class Orders {
 
     @JsonProperty("orderOption")
@@ -18,4 +20,39 @@ public class Orders {
 
     @JsonProperty("deliveryAddress")
     public String deliveryAddress;
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

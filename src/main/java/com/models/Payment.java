@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Payment {
 
+    @JsonProperty("ccv")
     public Long id;
 
     @JsonProperty("ccv")
